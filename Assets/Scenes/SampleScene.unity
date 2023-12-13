@@ -7219,7 +7219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136cf01b01fdd2841ae2a20de368f352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particulas: {fileID: 389548608}
+  particulas: {fileID: 0}
 --- !u!54 &1198170486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7411,7 +7411,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RightHandTurnAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Right Hand Turn
       m_Type: 0
@@ -7421,7 +7421,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 8275859971367427353, guid: 0be0028c24f2a4c14a96b6aa39055933,
+      type: 3}
 --- !u!114 &1415268585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7442,7 +7443,7 @@ MonoBehaviour:
   m_GravityApplicationMode: 0
   m_ForwardSource: {fileID: 0}
   m_LeftHandMoveAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Left Hand Move
       m_Type: 0
@@ -7452,7 +7453,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 8275859971367427353, guid: 0be0028c24f2a4c14a96b6aa39055933,
+      type: 3}
   m_RightHandMoveAction:
     m_UseReference: 0
     m_Action:
@@ -7497,7 +7499,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933,
+      type: 3}
 --- !u!1001 &1733588418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7564,6 +7567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
