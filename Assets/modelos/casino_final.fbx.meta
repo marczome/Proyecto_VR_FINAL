@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2f8f90993d2d21f4f815b55db52ad2bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: fb72fc2a6d8eeea4388d8a94113ea2cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: cupula_escalera_texture
     second: {fileID: 2100000, guid: b05d4ea659f1d594f964b22bf8b9bc1a, type: 2}
   - first:
