@@ -16,6 +16,8 @@ public class topoMovimiento : MonoBehaviour
     public int puntuacion = 0;
 
     private bool colisiona = false;
+    private bool corutinaActiva = false;
+    private bool cicloSubir = false;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -26,9 +28,42 @@ public class topoMovimiento : MonoBehaviour
     private void Start()
     {
         alturainicial = transform.position.y;
-        StartCoroutine(CicloSubirBajar());
+    //StartCoroutine(CicloSubirBajar());
     }
 
+    public void IniciarContador()
+    {
+        if (!corutinaActiva)
+        {
+            cicloSubir = true;
+            StartCoroutine(CicloSubirBajar());
+            corutinaActiva = true;
+        }
+    }
+
+    public void DetenerContador()
+    {
+        if (corutinaActiva)
+        {
+            cicloSubir = false;
+            StopCoroutine(CicloSubirBajar());
+            Debug.Log("parar");
+            BajarObjeto();
+            corutinaActiva = false;
+            if (puntuacion < 10)
+            {
+                //dar llave
+                //activar música victoria
+                puntuacion = 0;
+            }
+            else
+            {
+                //muscia perder
+                puntuacion = 0;
+            }
+
+        }
+    }
     private void SubirObjeto()
     {
         transform.position = new Vector3(transform.position.x, alturainicial + incrementoAltura, transform.position.z);
@@ -43,7 +78,7 @@ public class topoMovimiento : MonoBehaviour
 
     private IEnumerator CicloSubirBajar()
     {
-        while (true)
+        while (cicloSubir)
         {
             yield return new WaitForSeconds(Random.Range(tiempoSubidaMin, tiempoSubidaMax));
             SubirObjeto();
