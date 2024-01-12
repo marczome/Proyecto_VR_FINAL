@@ -2159,7 +2159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199026354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.19, z: -2.33}
+  m_LocalPosition: {x: 0, y: -1.22, z: -2.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2927,7 +2927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236232461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.53, y: 6.25, z: 1.18}
+  m_LocalPosition: {x: -20.89, y: 6.25, z: 1.18}
   m_LocalScale: {x: 3, y: 3, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10295,7 +10295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511253388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.13, y: 3.92, z: -24.26}
+  m_LocalPosition: {x: -13.25, y: 0.77, z: -19.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17442,8 +17442,9 @@ GameObject:
   - component: {fileID: 1037456335}
   - component: {fileID: 1037456334}
   - component: {fileID: 1037456333}
-  - component: {fileID: 1037456332}
   - component: {fileID: 1037456337}
+  - component: {fileID: 1037456339}
+  - component: {fileID: 1037456338}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -17451,24 +17452,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1037456332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037456331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3715149c5414e4bb9e3d1fb81c64b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiempoSubidaMin: 1
-  tiempoSubidaMax: 4
-  tiempoMantenimientoMin: 1
-  tiempoMantenimientoMax: 4
-  incrementoAltura: 0.5
-  puntuacion: 0
 --- !u!65 &1037456333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17563,6 +17546,39 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 126
   m_CollisionDetection: 2
+--- !u!114 &1037456338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037456331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbdeece0a0840844ab38ac284d0b08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiempoSubidaMin: 1
+  tiempoSubidaMax: 4
+  tiempoMantenimientoMin: 1
+  tiempoMantenimientoMax: 4
+  whackAMoleMovimiento: {fileID: 1037456339}
+  incrementoAltura: 0.5
+  cicloSubir: 0
+  puntuacion: 0
+--- !u!114 &1037456339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037456331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a95976e64f03df47be8111835b0a111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WhackAMoleManager: {fileID: 1037456338}
 --- !u!1001 &1057023576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17957,7 +17973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085709550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.813675, y: -2.89, z: 13.95}
+  m_LocalPosition: {x: 9.77, y: 1.02, z: 26.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20956,7 +20972,6 @@ GameObject:
   - component: {fileID: 1294407670}
   - component: {fileID: 1294407669}
   - component: {fileID: 1294407668}
-  - component: {fileID: 1294407673}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -20976,7 +20991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29e3c3dc3f456245926fc9ebeeecab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptTopoMovimiento: {fileID: 1037456332}
+  whackAMoleManager: {fileID: 1037456338}
 --- !u!65 &1294407669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21055,19 +21070,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1294407673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294407667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e29e3c3dc3f456245926fc9ebeeecab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTopoMovimiento: {fileID: 1070291620}
 --- !u!64 &1299587720
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21968,7 +21970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382207092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.670906, y: 3.0443347, z: -21.20625}
+  m_LocalPosition: {x: -16.790905, y: -0.105665684, z: -16.89625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22245,7 +22247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415268579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.13, y: 3.9399998, z: -24.26}
+  m_LocalPosition: {x: -13.25, y: 0.77, z: -19.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24406,17 +24408,17 @@ PrefabInstance:
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.13
+      value: -13.25
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.9200003
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.26
+      value: -19.95
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}

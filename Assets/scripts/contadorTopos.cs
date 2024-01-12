@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class contadorTopos : MonoBehaviour
 {
-    public topoMovimiento scriptTopoMovimiento; // Asigna el script topoMovimiento en el Inspector.
+    public WhackAMoleManager whackAMoleManager;
 
     private bool contadorActivo = false;
 
@@ -23,12 +23,12 @@ public class contadorTopos : MonoBehaviour
     {
         contadorActivo = true;
 
-        scriptTopoMovimiento.IniciarContador();
+        whackAMoleManager.IniciarContador();
 
         yield return new WaitForSeconds(35f);
 
 
-        scriptTopoMovimiento.DetenerContador();
+        whackAMoleManager.DetenerContador();
 
         Debug.Log("parar");
 

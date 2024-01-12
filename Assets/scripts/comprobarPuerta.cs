@@ -8,7 +8,9 @@ public class comprobarPuerta : MonoBehaviour
     public LlaveCuenta LlaveCuenta;
     void OnTriggerEnter(Collider other)
     {
-        if (LlaveCuenta.totalLlaves == 3)
+
+        StartCoroutine(abrirPuerta.AbrirPuerta());
+        if (LlaveCuenta.totalLlaves == 0)
         {
             StartCoroutine(abrirPuerta.AbrirPuerta());
         }
