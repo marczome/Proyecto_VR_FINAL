@@ -5,12 +5,15 @@ using UnityEngine;
 public class comprobarPuerta : MonoBehaviour
 {
     public abrirPuerta abrirPuerta;
-    public LlaveCuenta LlaveCuenta;
+    public int totalLlaves;
+    public void IncrementarTotalLlaves()
+    {
+        totalLlaves++;
+    }
+
     void OnTriggerEnter(Collider other)
     {
-
-        StartCoroutine(abrirPuerta.AbrirPuerta());
-        if (LlaveCuenta.totalLlaves == 0)
+        if (other.CompareTag("Player") && totalLlaves == 2)
         {
             StartCoroutine(abrirPuerta.AbrirPuerta());
         }

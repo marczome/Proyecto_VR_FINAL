@@ -9,10 +9,8 @@ public class abrirPuerta : MonoBehaviour
     public IEnumerator AbrirPuerta()
     {
         Vector3 puntoRotacion = puntoDeRotacion.position;
-        Debug.Log('b');
         while (transform.rotation.eulerAngles.y < 90)
         {
-            Debug.Log('c');
             transform.RotateAround(puntoRotacion, Vector3.up, 20 * Time.deltaTime);
             yield return null;
         }

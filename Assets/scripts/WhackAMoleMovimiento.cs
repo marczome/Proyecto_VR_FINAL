@@ -6,8 +6,7 @@ public class WhackAMoleMovimiento : MonoBehaviour
 {
     public WhackAMoleManager WhackAMoleManager;
     private float alturainicial;
-
-    private bool colisiona = false;
+    private bool interrupcionPendiente = false;
 
     private void Start()
     {
@@ -16,7 +15,12 @@ public class WhackAMoleMovimiento : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        colisiona = true;
+        Debug.Log(WhackAMoleManager.puntuacionGlobal++);
+        if (!interrupcionPendiente)
+        {
+            BajarObjetoInstantaneamente();
+            interrupcionPendiente = true;
+        }
     }
 
     private void SubirObjeto()
@@ -30,13 +34,16 @@ public class WhackAMoleMovimiento : MonoBehaviour
         transform.position = new Vector3(transform.position.x, alturainicial, transform.position.z);
         Debug.Log("Bajando objeto");
 
-        if (colisiona)
-        {
-            Debug.Log("colision");
-            colisiona = false;
-            WhackAMoleManager.puntuacion++;
+        
+        interrupcionPendiente = false;
+    }
 
-        }
+    private void BajarObjetoInstantaneamente()
+    {
+        transform.position = new Vector3(transform.position.x, alturainicial, transform.position.z);
+        WhackAMoleManager.puntuacionGlobal++;
+        WhackAMoleManager.golpeTopo.Play();
+        Debug.Log(WhackAMoleManager.puntuacionGlobal);
     }
 
     public IEnumerator CicloSubirBajar()
@@ -44,9 +51,16 @@ public class WhackAMoleMovimiento : MonoBehaviour
         while (WhackAMoleManager.cicloSubir)
         {
             yield return new WaitForSeconds(Random.Range(WhackAMoleManager.tiempoSubidaMin, WhackAMoleManager.tiempoSubidaMax));
-            SubirObjeto();
-            yield return new WaitForSeconds(Random.Range(WhackAMoleManager.tiempoMantenimientoMin, WhackAMoleManager.tiempoMantenimientoMax));
-            BajarObjeto();
+
+            // Verificar si hay una interrupción pendiente
+            if (!interrupcionPendiente)
+            {
+                SubirObjeto();
+                yield return new WaitForSeconds(Random.Range(WhackAMoleManager.tiempoMantenimientoMin, WhackAMoleManager.tiempoMantenimientoMax));
+                BajarObjeto();
+            }
         }
     }
 }
+
+

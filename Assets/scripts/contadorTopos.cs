@@ -29,7 +29,7 @@ public class contadorTopos : MonoBehaviour
 
 
         whackAMoleManager.DetenerContador();
-
+        whackAMoleManager.ManejarPuntuacion();
         Debug.Log("parar");
 
         contadorActivo = false;
