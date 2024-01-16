@@ -19,7 +19,7 @@ public class WhackAMoleManager : MonoBehaviour
     private bool corutinaActiva = false;
     public GameObject llavePrefab;
     public bool cicloSubir = false;
-    private bool llaveGenerada = false;
+    private static bool llaveGeneradaGlobal = false;
 
     public static int puntuacionGlobal = 0;
 
@@ -39,35 +39,39 @@ public class WhackAMoleManager : MonoBehaviour
             cicloSubir = false;
             StopCoroutine(whackAMoleMovimiento.CicloSubirBajar());
             corutinaActiva = false;
+            ManejarPuntuacion();
+            Debug.Log(puntuacionGlobal);
             
+
         }
     }
     public void ManejarPuntuacion()
     {
-        if (puntuacionGlobal > 2 && !llaveGenerada)
+        if (puntuacionGlobal > 2 && !llaveGeneradaGlobal)
         {
-            musicaVictoria.Play();
+            Debug.Log("victoria");
             GenerarLlave();
-            Debug.Log("Victoria");
-
+            musicaVictoria.Play();
         }
-        else
+        else if (puntuacionGlobal <= 2)
         {
-            musicaPerder.Play();
-            
-
+            Debug.Log("derrota");
+            if (!llaveGeneradaGlobal)
+            {
+                musicaPerder.Play();
+            }
         }
-
-        puntuacionGlobal = 0;
     }
 
     private void GenerarLlave()
     {
-        llaveGenerada = true;  
-        Vector3 posicionGeneracion = new Vector3(-4.128376f, 1.761f, -17.28055f);
-        Instantiate(llavePrefab, posicionGeneracion, Quaternion.identity);
-        
-    }
+        if (!llaveGeneradaGlobal)
+        {
+            llaveGeneradaGlobal = true;
+            Vector3 posicionGeneracion = new Vector3(-4.128376f, 1.761f, -17.28055f);
+            Instantiate(llavePrefab, posicionGeneracion, Quaternion.identity);
+        }
 
+    }
 
 }

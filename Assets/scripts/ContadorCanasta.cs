@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class contadorTopos : MonoBehaviour
+public class ContadorCanasta : MonoBehaviour
 {
-    public WhackAMoleManager WhackAMoleManager;
-
+    public PelotaMaquinaManager PelotaMaquinaManager;
     private bool contadorActivo = false;
 
     private void OnTriggerEnter(Collider other)
@@ -14,22 +13,22 @@ public class contadorTopos : MonoBehaviour
         {
             if (!contadorActivo)
             {
-                StartCoroutine(ContadorCoroutine());
+                StartCoroutine(ContadorCoroutinaP());
             }
         }
     }
 
-    private IEnumerator ContadorCoroutine()
+    private IEnumerator ContadorCoroutinaP()
     {
         contadorActivo = true;
 
-        WhackAMoleManager.IniciarContador();
+        PelotaMaquinaManager.IniciarContadorP();
 
         yield return new WaitForSeconds(35f);
 
 
-        WhackAMoleManager.DetenerContador();
-        
+        PelotaMaquinaManager.DetenerContadorP();
+
         Debug.Log("parar");
 
         contadorActivo = false;

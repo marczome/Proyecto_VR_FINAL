@@ -15,7 +15,6 @@ public class WhackAMoleMovimiento : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(WhackAMoleManager.puntuacionGlobal++);
         if (!interrupcionPendiente)
         {
             BajarObjetoInstantaneamente();

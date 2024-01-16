@@ -13,7 +13,7 @@ public class comprobarPuerta : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && totalLlaves == 2)
+        if (other.CompareTag("Player") && totalLlaves == 3)
         {
             StartCoroutine(abrirPuerta.AbrirPuerta());
         }
