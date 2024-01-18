@@ -6,6 +6,7 @@ public class comprobarPuerta : MonoBehaviour
 {
     public abrirPuerta abrirPuerta;
     public int totalLlaves;
+    public AudioSource puerta;
     public void IncrementarTotalLlaves()
     {
         totalLlaves++;
@@ -16,6 +17,7 @@ public class comprobarPuerta : MonoBehaviour
         if (other.CompareTag("Player") && totalLlaves == 3)
         {
             StartCoroutine(abrirPuerta.AbrirPuerta());
+            puerta.Play();
         }
     }
 }
